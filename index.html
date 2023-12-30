@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Python in JavaScript</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.1/brython.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <h1>Python and JavaScript Integration</h1>
+    <!-- No need for the Python code here -->
+    <script type="text/javascript">
+        // Run the Brython code
+        brython({debug:1, pythonpath:['.']});
+    </script>
+</body>
+</html>
