@@ -5,21 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Run Python in JavaScript</title>
-    <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.17.0/full/pyodide.js"></script>
 </head>
 <body>
     <h1>Python and JavaScript Integration</h1>
 
     <script type="text/javascript">
-        languagePluginLoader.then(() => {
-            // Your Python code goes here
-            const pythonCode = `
-                name = "John"
-                print(f"Hello from Python, {name}!")
-            `;
+        // Your Python code goes here
+        const pythonCode = `
+            name = "John"
+            print("Hello from Python, " + name + "!")
+        `;
 
-            pyodide.runPython(pythonCode);
-        });
+        // Function to execute Python code
+        function runPythonCode(code) {
+            try {
+                // Using eval to execute the Python code
+                eval(code);
+            } catch (error) {
+                console.error("Error executing Python code:", error);
+            }
+        }
+
+        // Run the Python code
+        runPythonCode(pythonCode);
     </script>
 </body>
 </html>
